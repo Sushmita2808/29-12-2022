@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>Customer Information</h1>
+    
+    <form role="form" (ngSubmit)="doSubmitFrom()">
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <span>Company Name</span>
+                <br>
+                <input type="text" name="companyname"[(ngModel)]="data.companyname" class="form-control" /><br/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <span>Email</span>
+                <br>
+                <input type="text" name="email" [(ngModel)]="data.email" class="form-control input-normal" /><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <span>Phone Number</span>
+                <br>
+                <input type="text" name="phone" [(ngModel)]="data.phone" /><br/>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+            <h1>Machines</h1>
+            <div class="form-group col-lg-2 ">
+                <span>Machine type</span>
+                <span>&nbsp;&nbsp;  Amount</span>
+                <br>
+                <select class="form-control form-select" name="machines" [(ngModel)]="data.machines">
+                    <option value="">Select type</option>
+                    <option value="Scissor Lift">Scissor Lift</option>
+                    <option value="Telehandler">Telehandler</option>
+                    <option value="Transporter">Transporter</option>
+                </select>
+                <input type="text" name="amount" [(ngModel)]="data.amount" />
+                <span style="color: red;">Delete</span><br/>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <br><br><br><br>
+                <button  type="submit" class="btn btn-primary" (click)="getVal()" >Place order</button>
+            </div>
+        </div>
+    </form>
+
+</div>

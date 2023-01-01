@@ -1,0 +1,77 @@
+<div class="container">
+    <h1>Registration</h1>
+    <form role="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <label for="fullname">Full Name</label>
+                <input type="text" class="form-control"formControlName="fullName" [ngClass]="{'is-invalid':submitted && registerForm.controls}"/>
+            </div>
+            <div *ngIf ="submitted && registerForm.controls" class="text-danger">
+                <div *ngIf ="submitted && registerForm.controls">
+                    Full Name is required
+                </div>
+            </div>
+        </div><br/>
+
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control input-normal" formControlName="userName" [ngClass]="{'is-invalid':submitted && registerForm.controls}"/>
+            </div>
+            <div *ngIf ="submitted && registerForm.controls" class="text-danger">
+                <div *ngIf ="submitted && registerForm.controls">
+                    User Name is required
+                </div>
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <label for="email">Email</label>
+                <input type="email" class="form-control input-normal"formControlName="email" [ngClass]="{'is-invalid':submitted }" />
+            </div>
+            <div *ngIf ="submitted && registerForm.controls" class="text-danger">
+                <div *ngIf ="submitted && registerForm.controls">
+                    Email is required
+                </div>
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <label for="password">Password</label>
+                <input type="password" class="form-control input-normal"formControlName="password" [ngClass]="{'is-invalid':submitted && registerForm.controls}" />
+            </div>
+            <div *ngIf ="submitted && registerForm.controls" class="text-danger">
+                <div *ngIf ="submitted && registerForm.controls">
+                    Password is required
+                </div>
+            </div>
+        </div><br/>
+
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" class="form-control input-normal"formControlName="confirmPassword" [ngClass]="{'is-invalid':submitted && registerForm.controls}" />
+                <div *ngIf ="submitted && registerForm.controls" class="text-danger">
+                    <div *ngIf ="submitted && registerForm.controls">
+                        Confirm Password is required
+                    </div>
+                </div><br/>
+
+                <input type="checkbox" formControlName="acceptTerms" [ngClass]="{'is-invalid':submitted && registerForm.controls}"/>&nbsp;
+                <label for="acceptTerms" class="form-check-label">I have read and agree to the Terms</label><br/><br/>
+                <div *ngIf ="submitted && registerForm.controls" class="text-danger">
+                    <div *ngIf ="submitted && registerForm.controls">
+                     Accept Terms is required
+                    </div>
+                </div><br/>
+            </div>
+        </div><br/>
+
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <button type="submit" class="btn btn-primary"  >Register</button>&nbsp;
+                <button type="reset" class="btn btn-warning " >Reset</button>
+            </div>
+        </div>
+    </form>
+</div>
